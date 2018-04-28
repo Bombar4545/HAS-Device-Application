@@ -10,8 +10,8 @@ CodeCheckpoint_01
 
   Group Members and Work Done by Each Member
     Ufuk Bombar:
-    Muhammad Saboor:
-    Taha Khurram:
+    Muhammad Saboor: wrote Device classes, DeviceController classes, VirtualDeviceController classes and Pin Classes. Debugged GoogleSessionManager and GoogleDriveManager classes.
+    Taha Khurram: wrote GoogleSessionManager and GoogleDriveManager using Google OAuth 2.0 API and Google Drive API v2
     Ege Ozan Özyedek: Coded the Command class, CommandFactory class, CommandExecutor class.
     Ata Sonat Uzun:
     Ege Hakan Karaağaç:
