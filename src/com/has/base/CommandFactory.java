@@ -296,7 +296,7 @@ public class CommandFactory {
      * @param deviceId, the ID of device that the Command will get data from
      * @return Command, a new command with specified name and container
      */
-    public static Command createGetCO2ConcentraitonCommand(int deviceId) {
+    public static Command createGetCOConcentraitonCommand(int deviceId) {
         DataContainer arguments = new DataContainer(new DataStructure(DataType.INT));
         arguments.setData(0, deviceId);
         return new Command(CommandName.GET_CO_CONCENTRATION, arguments);
@@ -518,11 +518,11 @@ public class CommandFactory {
      * @param concentration, gas value to be set
      * @return Command, a new command with specified name and container
      */
-    public static Command createSetCO2ConcentrationCommand(int deviceId, double concentration) {
+    public static Command createSetCOConcentrationCommand(int deviceId, double concentration) {
         DataContainer arguments = new DataContainer(new DataStructure(DataType.INT, DataType.DOUBLE));
         arguments.setData(0, deviceId);
         arguments.setData(1, concentration);
-        return new Command(CommandName.SET_CO2_CONCENTRATION, arguments);
+        return new Command(CommandName.SET_CO_CONCENTRATION, arguments);
     }
 
     /**
@@ -545,12 +545,12 @@ public class CommandFactory {
      * @param cMET, Methane concentration value to be set
      * @param cETH, Ethane concentration value to be set
      * @param cPRO, Propane concentration value to be set
-     * @param cCO2, CO2 concentration value to be set
+     * @param cCO, CO concentration value to be set
      * @param cSMO, Smoke concentration value to be set
      * @return Command, a new command with specified name and container
      */
     public static Command createSetGasConcentrationCommand(int deviceId, double cLPG, double cMET, double cETH, double cPRO,
-                                                           double cCO2, double cSMO) {
+                                                           double cCO, double cSMO) {
         DataContainer arguments = new DataContainer(new DataStructure(DataType.INT, DataType.DOUBLE, DataType.DOUBLE, DataType.DOUBLE,
                                                            DataType.DOUBLE, DataType.DOUBLE, DataType.DOUBLE));
         arguments.setData(0, deviceId);
@@ -558,7 +558,7 @@ public class CommandFactory {
         arguments.setData(2, cMET);
         arguments.setData(3, cETH);
         arguments.setData(4, cPRO);
-        arguments.setData(5, cCO2);
+        arguments.setData(5, cCO);
         arguments.setData(6, cSMO);
         return new Command(CommandName.SET_GAS_CONCENTRATION, arguments);
     }
@@ -604,12 +604,12 @@ public class CommandFactory {
      * @param cMET, Methane concentration value to be set
      * @param cETH, Ethane concentration value to be set
      * @param cPRO, Propane concentration value to be set
-     * @param cCO2, CO2 concentration value to be set
+     * @param cCO, CO2 concentration value to be set
      * @param cSMO, Smoke concentration value to be set
      * @return Command, a new command with specified name and container
      */
     public static Command createSetGasDataCommand( TimeStamp ts, double cLPG, double cMET, double cETH, double cPRO,
-                                                   double cCO2, double cSMO) {
+                                                   double cCO, double cSMO) {
         DataContainer arguments = new DataContainer(new DataStructure(DataType.TIMESTAMP, DataType.DOUBLE, DataType.DOUBLE, DataType.DOUBLE,
                                                    DataType.DOUBLE, DataType.DOUBLE, DataType.DOUBLE));
         arguments.setData(0, ts);
@@ -617,7 +617,7 @@ public class CommandFactory {
         arguments.setData(2, cMET);
         arguments.setData(3, cETH);
         arguments.setData(4, cPRO);
-        arguments.setData(5, cCO2);
+        arguments.setData(5, cCO);
         arguments.setData(6, cSMO);
         return new Command(CommandName.SET_GAS_DATA, arguments);
     }
